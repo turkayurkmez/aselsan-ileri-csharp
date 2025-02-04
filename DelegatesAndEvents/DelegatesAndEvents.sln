@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesAndEvents", "DelegatesAndEvents\DelegatesAndEvents.csproj", "{A0BC4948-35F7-4977-8159-EF00AB30552D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventMechanism", "EventMechanism\EventMechanism.csproj", "{B52C111F-7798-4A2F-A229-36FFF009981A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0BC4948-35F7-4977-8159-EF00AB30552D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BC4948-35F7-4977-8159-EF00AB30552D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BC4948-35F7-4977-8159-EF00AB30552D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BC4948-35F7-4977-8159-EF00AB30552D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B52C111F-7798-4A2F-A229-36FFF009981A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B52C111F-7798-4A2F-A229-36FFF009981A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B52C111F-7798-4A2F-A229-36FFF009981A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B52C111F-7798-4A2F-A229-36FFF009981A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
