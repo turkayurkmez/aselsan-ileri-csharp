@@ -85,7 +85,7 @@ namespace AbstractionAndInterface
 
     public class DocumentPrinter
     {
-        public void PrintDocument(IPrintable document) {
+        public void PrintDocument(  document) {
             document.Print();
         }
     }
