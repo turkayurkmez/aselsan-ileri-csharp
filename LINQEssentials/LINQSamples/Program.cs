@@ -29,3 +29,52 @@ void show(IEnumerable<dynamic> standardQuery)
         Console.WriteLine($"{item.Name}-------{item.Price}");
     }
 }
+
+var findingProduct = products.FirstOrDefault(p=> p.Category.Name.Contains("Üst Giyim"));
+Console.WriteLine($"Bulunan ürün: {findingProduct?.Name}");
+
+//birden fazla olmasının istenmediği durumlarda:
+var findingProduct2 = products.SingleOrDefault(p => p.Id == 13);
+
+Console.WriteLine($"{findingProduct2?.Name}");
+
+/* Aggregate Functions */
+
+var averagePrice = products.Average(p => p.Price);
+Console.WriteLine($"Ortalama Fiyat: {averagePrice}");
+var totalPrices = products.Sum(p => p.Price);
+var lowRatedProductCount = products.Count(p => p.Rating < 4.5);
+var maxPrice = products.Max(p => p.Price);
+//max fiyatı göster:
+
+Console.WriteLine($"En yüksek fiyat: {maxPrice}");
+
+var maxPricedProduct = products.Find(p => p.Price == maxPrice);
+Console.WriteLine($"En yüksek fiyatlı ürün: {maxPricedProduct?.Name}");
+var minPriceProduct = products.MinBy(p => p.Price);
+
+
+var minPrice = products.Min(p => p.Price);
+Console.WriteLine("------------- Group By -------------");
+
+var grpProducts = products.GroupBy(product => product.Color, item => new { item.Name, item.Price, item.Rating }, (color, products) =>
+{
+    return new { Key = color, Adet = products.Count(), EnUcuz = products.Min(x => x.Price), OrtalamaPuan = products.Average(p => p.Rating) };
+});
+
+grpProducts.ToList().ForEach(p => Console.WriteLine($"{p.Key}\t{p.Adet}\t{p.EnUcuz}\t{p.OrtalamaPuan}"));
+
+var collection = Enumerable.Range(1, 20);
+
+var chunked = collection.Chunk(4);
+foreach (var item in chunked)
+{
+    Console.WriteLine(string.Join(",",item));
+}
+Console.WriteLine("Skip ve Take ");
+var taked = collection.Skip(3).Take(5);
+var anotherTake = collection.Take(^4..);
+foreach (var item in anotherTake)
+{
+    Console.WriteLine(item);
+}
