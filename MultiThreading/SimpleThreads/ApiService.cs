@@ -17,6 +17,7 @@ namespace SimpleThreads
             var tasks = Enumerable.Range(1, 1000)
                         .Select(x => _httpClient.GetStringAsync($"https://sample/api/{x}"))
                         .ToList();
+                        
 
             //dead lock olabilir:
             Task.WaitAll(tasks.ToArray());
@@ -33,7 +34,7 @@ namespace SimpleThreads
                         .ToList();
 
             //dead lock olmaz:
-            Task.WhenAll(tasks.ToArray());
+            var result =await Task.WhenAll(tasks);
             return tasks.Select(r => r.Result).ToList();
 
 
