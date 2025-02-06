@@ -47,7 +47,7 @@ namespace OpenClosed
     {
         public override decimal GetDiscountedPrice(decimal price)
         {
-            return price * .80m;
+            throw new ArgumentException();
         }
     }
 
